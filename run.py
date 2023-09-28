@@ -392,7 +392,7 @@ def main(args):
                 dev_accs, predictions = [], []
                 with open(output_fn, 'w') as f, open(gold_fn, 'w') as f1:
                     for pred_nl, gold in zip(pred_nls, eval_examples):
-                        print(gold.idx,gold.target)
+                        # print(gold.idx,gold.target)
                         dev_accs.append(pred_nl.strip() == gold.target.strip())
                         predictions.append(str(gold.idx) + '\t' + pred_nl)
                         f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
