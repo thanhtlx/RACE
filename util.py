@@ -488,8 +488,8 @@ def read_contextual_medit_examples(filename, data_num):
     examples = []
     with open(filename, encoding="utf-8") as f:
         for idx, line in enumerate(f):
-            if idx > 1000:
-                break
+            # if idx > 1000:
+            #     break
             line = line.strip()
             js = json.loads(line)
             if 'idx' not in js:
