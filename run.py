@@ -396,7 +396,7 @@ def main(args):
                         dev_accs.append(pred_nl.strip() == gold.target.strip())
                         predictions.append(str(gold.idx) + '\t' + pred_nl)
                         f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
-                        f1.write(str(gold.idx) + '\t' + gold.target.encode('utf-8').decode('utf-8').strip() + '\n')
+                        f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
                     
                 (goldMap, predictionMap) = smooth_bleu.computeMaps(predictions, gold_fn)
                 dev_bleu = round(smooth_bleu.bleuFromMaps(goldMap, predictionMap)[0], 2)
@@ -447,12 +447,8 @@ def main(args):
             for pred_nl, gold in zip(pred_nls, eval_examples):
                 dev_accs.append(pred_nl.strip() == gold.target.strip())
                 predictions.append(str(gold.idx) + '\t' + pred_nl)
-                try:
-                    f1.write(str(gold.idx) + '\t' + gold.target.encode('utf-8').decode('utf-8').strip() + '\n')
-                    f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
-                except:
-                    print(gold.idx)
-                    print(gold.target,pred_nl)
+                f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
+                f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
             
         (goldMap, predictionMap) = smooth_bleu.computeMaps(predictions, gold_fn)
         dev_bleu = round(smooth_bleu.bleuFromMaps(goldMap, predictionMap)[0], 2)
@@ -530,7 +526,7 @@ def main(args):
             for pred_nl, gold in zip(pred_nls, eval_examples):
                 predictions.append(str(gold.idx) + '\t' + pred_nl)
                 f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
-                f1.write(str(gold.idx) + '\t' + gold.target.encode('utf-8').decode('utf-8').strip() + '\n')
+                f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
             
         (goldMap, predictionMap) = smooth_bleu.computeMaps(predictions, gold_fn)
         dev_bleu = round(smooth_bleu.bleuFromMaps(goldMap, predictionMap)[0], 2)
@@ -744,7 +740,7 @@ def ECMG(args):
                         dev_accs.append(pred_nl.strip() == gold.target.strip())
                         predictions.append(str(gold.idx) + '\t' + pred_nl)
                         f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
-                        f1.write(str(gold.idx) + '\t' + gold.target.encode('utf-8').decode('utf-8').strip() + '\n')
+                        f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
                     
                 (goldMap, predictionMap) = smooth_bleu.computeMaps(predictions, gold_fn)
                 dev_bleu = round(smooth_bleu.bleuFromMaps(goldMap, predictionMap)[0], 2)
@@ -797,7 +793,7 @@ def ECMG(args):
                 dev_accs.append(pred_nl.strip() == gold.target.strip())
                 predictions.append(str(gold.idx) + '\t' + pred_nl)
                 f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
-                f1.write(str(gold.idx) + '\t' + gold.target.encode('utf-8').decode('utf-8').strip() + '\n')
+                f1.write(str(gold.idx) + '\t' + gold.target.strip() + '\n')
             
         (goldMap, predictionMap) = smooth_bleu.computeMaps(predictions, gold_fn)
         dev_bleu = round(smooth_bleu.bleuFromMaps(goldMap, predictionMap)[0], 2)
