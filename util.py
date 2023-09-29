@@ -6,6 +6,7 @@ import math
 from torch.utils.data import TensorDataset
 import numpy as np
 import os
+import unicodedata
 import random
 import time
 from tqdm import tqdm
@@ -168,7 +169,8 @@ class Example(object):
                  ):
         self.idx = idx
         self.source = source
-        self.target = target.encode('ascii','ignore')
+        
+        self.target = unicodedata.normalize('NFD', target).encode('ascii', 'ignore').decode('ascii')
         self.url = url
         self.task = task
         self.sub_task = sub_task
