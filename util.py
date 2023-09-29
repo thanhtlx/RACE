@@ -168,7 +168,7 @@ class Example(object):
                  ):
         self.idx = idx
         self.source = source
-        self.target = target
+        self.target = target.encode('ascii','ignore')
         self.url = url
         self.task = task
         self.sub_task = sub_task

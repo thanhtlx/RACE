@@ -12,3 +12,9 @@ saved_model/*
 #
 
 env
+fixingv1.csv
+*.jsonl
+*.json 
+*.zip
+*.csv
+*.diff

@@ -398,7 +398,9 @@ def main(args):
                         try:
                             f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
                             f1.write(f'{gold.idx}\t{gold.target.strip()}\n')
-                        except:
+                        except Exception as e:
+                            f1.write(f'{gold.idx}\tERROR\n')
+                            print(e)
                             print(gold.idx)
                             print(gold.target,pred_nl)
                     
@@ -454,7 +456,8 @@ def main(args):
                 try:
                     f1.write(f'{gold.idx}\t{gold.target.strip()}\n')
                     f.write(str(gold.idx) + '\t' + pred_nl.strip() + '\n')
-                except:
+                except Exception as e:
+                    print(e)
                     print(gold.idx)
                     print(gold.target,pred_nl)
             
