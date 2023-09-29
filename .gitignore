@@ -10,3 +10,5 @@ events.out.*
 saved_model/*
 *.tar.gz
 #
+
+env
