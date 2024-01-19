@@ -18,3 +18,11 @@ fixingv1.csv
 *.zip
 *.csv
 *.diff
+new_data
+data_processing/saved_process/*.jsonl
+CMG-data/cmg*
+CMG-data/
+*.pkl
+data_processing/saved_process/*
+csv/*
+csv 
